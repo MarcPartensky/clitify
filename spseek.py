@@ -59,10 +59,10 @@ else:
 os.system(f"curl -so /tmp/spimage {image}")
 
 message = f"{duration_text}s {artists_names} - {name}"
-cmd = f'notify-send -i /tmp/spimage "{message}" >& /dev/stdout'
+cmd = f'notify-send -i /tmp/spimage "{message}" 2> /dev/stdout'
 os.system(cmd)
 
-c_message = termcolor.colored(f"{duration_s}s", "yellow")
+c_message = termcolor.colored(f"{duration_text}s", "yellow")
 c_artists_names = termcolor.colored(artists_names, "blue")
 c_name = termcolor.colored(name, "green")
 

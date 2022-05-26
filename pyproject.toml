@@ -8,6 +8,7 @@ authors = ["Marc Partensky <marc.partensky@gmail.com>"]
 python = "^3.10"
 termcolors = "^0.1.0"
 rich = "^12.4.4"
+spotipy = "^2.19.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"

@@ -1,10 +1,10 @@
 #!/bin/sh
 COUNTER=0
-for script in $(/bin/ls); do
-    if [[ -x $script ]]; then
+for script in $(/bin/ls spotipy); do
+    if [[ -x spotipy/$script ]]; then
         let COUNTER++
         cmd=$(echo $script | cut -d'.' -f1)
-        ln -sf $PWD/$script ~/.local/bin/$cmd
+        ln -sf $PWD/spotipy/$script ~/.local/bin/$cmd
         echo -e "- \e[1m$script\e[0m as \e[1m$cmd\e[0m"
     fi
 done

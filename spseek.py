@@ -2,11 +2,10 @@
 import os
 import sys
 import spotipy
+import termcolor
 
 duration_s = float(sys.argv[1])
 duration_ms = int(duration_s * 1000)
-
-import termcolor
 
 client_id = os.environ["SPOTIPY_CLIENT_ID"]
 client_secret = os.environ["SPOTIPY_CLIENT_SECRET"]
@@ -58,9 +57,14 @@ else:
     duration_text = f"+{duration_s}"
 
 os.system(f"curl -so /tmp/spimage {image}")
-duration_message = termcolor.colored(f"{duration_s}s", "yellow")
+
 message = f"{duration_text}s {artists_names} - {name}"
-cmd = f'notify-send -i /tmp/spimage "{message}"'
-colored_message = f"{duration_message} {artists_names} - {name}"
-print(colored_message)
+cmd = f'notify-send -i /tmp/spimage "{message}" >& /dev/stdout'
 os.system(cmd)
+
+c_message = termcolor.colored(f"{duration_s}s", "yellow")
+c_artists_names = termcolor.colored(artists_names, "blue")
+c_name = termcolor.colored(name, "green")
+
+colored_message = f"{c_message} {c_artists_names} - {c_name}"
+print(colored_message)

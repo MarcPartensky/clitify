@@ -1,3 +1,5 @@
+![https://pypi.org/project/clitify/](https://cdn.discordapp.com/attachments/507519157387132940/979538526259523615/unknown.png)
+
 # Install
 ```sh
 pip install clitify

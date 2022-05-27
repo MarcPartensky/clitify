@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "clitify"
-version = "0.1.6"
+version = "0.1.7"
 description = "CLI for the Spotify API using Spotipy"
 authors = ["Marc Partensky <marc.partensky@gmail.com>"]
 repository = "https://github.com/marcpartensky/clitify"

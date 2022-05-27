@@ -40,10 +40,10 @@ image = track["album"]["images"][0]["url"]
 name = track["name"]
 artists_names = ", ".join(map(lambda a: a["name"], track["artists"]))
 
-sp.current_user_saved_tracks_add(tracks=[track_id])
+sp.current_user_saved_tracks_delete(tracks=[track_id])
 
 os.system(f"curl -so /tmp/spimage {image}")
-message = f"❤️ {artists_names} - {name}"
+message = f"♡ {artists_names} - {name}"
 cmd = f'notify-send -i /tmp/spimage "{message}"'
 print(message)
 os.system(cmd)

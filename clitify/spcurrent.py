@@ -1,10 +1,11 @@
 #!/usr/bin/env python
+"""
+Show information about the spotify user.
+"""
+
 import os
 import spotipy
-from rich import print
-
-import requests
-import termcolor
+from rich import print as pprint
 
 client_id = os.environ["SPOTIPY_CLIENT_ID"]
 client_secret = os.environ["SPOTIPY_CLIENT_SECRET"]
@@ -32,4 +33,4 @@ access_token = token["access_token"]
 
 
 # print(sp.track(track_id=track["id"]))
-print(sp.me())
+pprint(sp.me())

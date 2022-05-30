@@ -1,6 +1,6 @@
 #!/bin/sh
 COUNTER=0
-folder=clitify
+folder=src
 for script in $(/bin/ls $folder); do
     if [[ -x $folder/$script ]]; then
         let COUNTER++

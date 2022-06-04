@@ -28,9 +28,9 @@ track = sp.current_user_playing_track()
 
 token = auth_manager.get_cached_token()
 access_token = token["access_token"]
-# print(track)
+pprint(track)
 # print(track["context"]["uri"])
 
 
 # print(sp.track(track_id=track["id"]))
-pprint(sp.me())
+# pprint(sp.me())

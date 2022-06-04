@@ -5,7 +5,6 @@ Show information about the spotify user.
 
 import os
 import spotipy
-from rich import print as pprint
 
 client_id = os.environ["SPOTIPY_CLIENT_ID"]
 client_secret = os.environ["SPOTIPY_CLIENT_SECRET"]
@@ -24,13 +23,16 @@ auth_manager = spotipy.oauth2.SpotifyOAuth(
 
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
-track = sp.current_user_playing_track()
+# track = sp.current_user_playing_track()
 
-token = auth_manager.get_cached_token()
-access_token = token["access_token"]
-pprint(track)
-# print(track["context"]["uri"])
+# token = auth_manager.get_cached_token()
+# access_token = token["access_token"]
 
+track = sp.currently_playing()["item"]
 
-# print(sp.track(track_id=track["id"]))
-# pprint(sp.me())
+track_id = track["id"]
+image = track["album"]["images"][0]["url"]
+name = track["name"]
+artists_names = ", ".join(map(lambda a: a["name"], track["artists"]))
+message = f"{artists_names} - {name}"
+print(message)

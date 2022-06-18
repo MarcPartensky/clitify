@@ -11,7 +11,8 @@ client_secret = os.environ["SPOTIPY_CLIENT_SECRET"]
 cache_path = os.path.join(os.environ["XDG_RUNTIME_DIR"], "spotipy-cache")
 
 
-redirect_uri = "http://localhost:8888/callback/"
+redirect_uri = "http://localhost:49153/callback/"
+# redirect_uri = "http://localhost:8888/callback/"
 
 auth_manager = spotipy.oauth2.SpotifyOAuth(
     client_id=client_id,
